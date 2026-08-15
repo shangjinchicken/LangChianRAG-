@@ -1,0 +1,45 @@
+# LangChain 核心
+langchain>=0.2.0,<1.0
+langchain-community>=0.2.0,<1.0
+
+# 阿里云百炼 DashScope
+dashscope>=1.20.0
+
+# Web 框架
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+sse-starlette>=2.0.0
+
+# 数据库
+sqlalchemy>=2.0.0
+alembic>=1.13.0
+
+# 认证
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+bcrypt>=4.0.0,<5.0.0
+python-dotenv>=1.0.0
+
+# 向量数据库
+chromadb>=1.0.0
+
+# 文档解析（仅保留轻量、有 Windows Wheel 的包）
+pypdf>=4.0.0
+python-docx>=1.0.0
+openpyxl>=3.1.0
+
+# 检索增强
+rank-bm25>=0.2.2
+jieba>=0.42.1
+
+# 缓存 & 限流
+cachetools>=5.3.0
+slowapi>=0.1.9
+
+# 数据校验
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# 异步 HTTP
+httpx>=0.27.0

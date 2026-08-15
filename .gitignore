@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+venv/
+*.egg-info/
+dist/
+
+# 覆盖率报告
+.coverage
+.coverage.*
+htmlcov/
+
+# 环境变量（包含 API Key，切勿提交）
+.env
+!.env.example
+
+# 数据库
+*.db
+*.sqlite3
+
+# ChromaDB 向量数据
+chroma_data/
+
+# 上传文件
+uploads/
+
+# Node
+node_modules/
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 通过文件 — 提交检查的临时状态，不该提交进版本库（只忽略 json 通过文件，fingerprint.js 脚本要入库）
+.claude/checks/*.json
