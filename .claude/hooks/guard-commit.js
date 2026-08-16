@@ -38,10 +38,11 @@ function currentFingerprint() {
 }
 
 // 输出"拒绝"决策给 Claude Code
+// 注意：hookEventName 必须放在 hookSpecificOutput 里面，否则会被 harness 整体忽略
 function deny(reason) {
   process.stdout.write(JSON.stringify({
-    hookEventName: 'PreToolUse',
     hookSpecificOutput: {
+      hookEventName: 'PreToolUse',
       permissionDecision: 'deny',
       permissionDecisionReason: reason
     }
