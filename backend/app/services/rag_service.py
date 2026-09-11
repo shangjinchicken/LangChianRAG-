@@ -1,4 +1,5 @@
 """RAG 问答服务：检索 + 生成 + 流式输出"""
+import asyncio
 import json
 from typing import AsyncGenerator
 from langchain_core.messages import HumanMessage, SystemMessage
@@ -30,9 +31,9 @@ async def generate_answer_stream(
             yield f"data: {json.dumps({'type': 'done', 'content': '', 'sources': []})}\n\n"
             return
 
-    # === 第2步：混合检索 ===
+    # === 第2步：混合检索（同步阻塞：Chroma 查询 + jieba 分词 + BM25，丢线程池避免卡事件循环）===
     try:
-        docs_with_scores = hybrid_search(question, top_k=15)
+        docs_with_scores = await asyncio.to_thread(hybrid_search, question, 15)
     except Exception as e:
         yield f"data: {json.dumps({'type': 'error', 'content': f'检索失败: {str(e)}', 'sources': []})}\n\n"
         return

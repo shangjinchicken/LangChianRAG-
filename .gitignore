@@ -40,3 +40,6 @@ Thumbs.db
 
 # 通过文件 — 提交检查的临时状态，不该提交进版本库（只忽略 json 通过文件，fingerprint.js 脚本要入库）
 .claude/checks/*.json
+
+# 压测结果（Locust CSV 报告 / 服务端采样）
+backend/stress/results/
